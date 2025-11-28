@@ -12,5 +12,20 @@
 
             return a / b;
         }
+        public int DivisionRest(int a, int b)
+        {
+            if (b == 0)
+                throw new DivideByZeroException($"Cannot devide. Denominator is zero.");
+
+            var division = (double)a / b;
+            var fractional = division - Math.Floor(division);
+
+            while (fractional != Math.Floor(fractional))
+            {
+                fractional *= 10;
+            }
+
+            return (int)fractional;
+        }
     }
 }
