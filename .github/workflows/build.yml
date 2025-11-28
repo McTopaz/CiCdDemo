@@ -27,3 +27,9 @@ jobs:
 
       - name: Run tests
         run: dotnet test --configuration Release --no-build --verbosity normal
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+            name: library-artifacts
+            path: Library/bin/Release/
