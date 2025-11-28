@@ -47,5 +47,12 @@ namespace Test
         {
             _calc.Division(10, 0);
         }
+
+        [TestMethod]
+        public void Divide_DecimalPart_CorrectValue()
+        {
+            var result = _calc.DivisionRest(9, 8);
+            Assert.AreEqual(125, result);
+        }
     }
 }
